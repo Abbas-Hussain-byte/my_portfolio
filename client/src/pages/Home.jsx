@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import CheckeredFlag from '../components/CheckeredFlag'
 import { RacingHelmet, Terminal, Speedometer, Laptop, CircuitBoard } from '../components/TechIcons'
-// import Scene3D from '../components/Scene3D'
 
 // Animation Variants
 const containerVariants = {
@@ -37,40 +36,6 @@ function Home() {
                 variants={containerVariants}
             >
 
-                {/* Animated F1 Car - Hero Graphic */}
-                <motion.div
-                    variants={itemVariants}
-                    style={{
-                        width: '100%',
-                        height: '400px',
-                        marginBottom: '40px',
-                        borderRadius: '16px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        border: '1px solid var(--border-subtle)',
-                        background: 'var(--bg-secondary)',
-                        color: 'var(--text-secondary)',
-                        position: 'relative',
-                        overflow: 'hidden'
-                    }}
-                >
-                    {/* <Scene3D /> */}
-                    <div className="mono" style={{ zIndex: 2, textAlign: 'center' }}>
-                        <div style={{ color: 'var(--accent-warning)', marginBottom: '8px', fontSize: '14px' }}>[ SYSTEM STATUS: OFFLINE ]</div>
-                        <div style={{ color: 'var(--text-tertiary)', fontSize: '12px' }}>3D VISUALIZATION TEMPORARILY DISABLED</div>
-                    </div>
-                    {/* Decorative grid for the placeholder */}
-                    <div style={{
-                        position: 'absolute',
-                        inset: 0,
-                        opacity: 0.1,
-                        backgroundImage: 'linear-gradient(var(--border-subtle) 1px, transparent 1px), linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px)',
-                        backgroundSize: '20px 20px',
-                        pointerEvents: 'none'
-                    }}></div>
-                </motion.div>
-
                 {/* Floating Tech Icons Banner */}
                 <motion.div
                     variants={itemVariants}
@@ -79,17 +44,18 @@ function Home() {
                         gap: '32px',
                         marginBottom: '40px',
                         opacity: 0.6,
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        justifyContent: 'center' // Centered icons
                     }}
                 >
-                    <RacingHelmet size={32} color="var(--accent-primary)" />
-                    <Terminal size={32} color="var(--accent-success)" />
-                    <Speedometer size={32} color="var(--accent-warning)" />
-                    <Laptop size={32} color="var(--accent-primary)" />
-                    <CircuitBoard size={32} color="var(--accent-highlight)" />
+                    <RacingHelmet size={40} color="var(--accent-primary)" />
+                    <Terminal size={40} color="var(--accent-success)" />
+                    <Speedometer size={40} color="var(--accent-warning)" />
+                    <Laptop size={40} color="var(--accent-primary)" />
+                    <CircuitBoard size={40} color="var(--accent-highlight)" />
                 </motion.div>
 
-                <motion.h1 variants={itemVariants} style={{ marginBottom: '24px' }}>
+                <motion.h1 variants={itemVariants} style={{ marginBottom: '24px', textAlign: 'center' }}>
                     Abbas Hussain
                 </motion.h1>
 
@@ -100,7 +66,10 @@ function Home() {
                         lineHeight: '1.6',
                         color: 'var(--text-secondary)',
                         maxWidth: '700px',
-                        marginBottom: '16px'
+                        marginBottom: '16px',
+                        textAlign: 'center',
+                        marginLeft: 'auto',
+                        marginRight: 'auto'
                     }}
                 >
                     CS student and tech enthusiast developing solutions using <span style={{ color: 'var(--accent-primary)' }}>full stack</span> and <span style={{ color: 'var(--accent-primary)' }}>AI/ML</span> technology.
@@ -114,7 +83,10 @@ function Home() {
                         color: 'var(--text-tertiary)',
                         maxWidth: '650px',
                         marginBottom: '32px',
-                        fontStyle: 'italic'
+                        fontStyle: 'italic',
+                        textAlign: 'center',
+                        marginLeft: 'auto',
+                        marginRight: 'auto'
                     }}
                 >
                     Building software with focus on clean code, measured performance, and iterative improvement.
@@ -125,7 +97,8 @@ function Home() {
                     style={{
                         display: 'flex',
                         gap: '16px',
-                        marginBottom: '48px'
+                        marginBottom: '48px',
+                        justifyContent: 'center'
                     }}
                 >
                     <Link to="/projects" className="btn btn-primary">
@@ -143,7 +116,10 @@ function Home() {
                         fontSize: '14px',
                         color: 'var(--text-tertiary)',
                         borderLeft: '2px solid var(--border-subtle)',
-                        paddingLeft: '16px'
+                        paddingLeft: '16px',
+                        maxWidth: '600px',
+                        marginLeft: 'auto',
+                        marginRight: 'auto'
                     }}
                 >
                     <div style={{ marginBottom: '8px' }}>
@@ -155,15 +131,8 @@ function Home() {
                         <span style={{ color: 'var(--text-secondary)' }}>Distributed systems, algorithms & AI/ML</span>
                     </div>
                 </motion.div>
-
-                {/* Checkered Flag Divider */}
-                <motion.div variants={itemVariants} className="section-divider">
-                    <div className="section-divider-line"></div>
-                    <CheckeredFlag size={28} />
-                    <div className="section-divider-line"></div>
-                </motion.div>
             </motion.section>
-        </div>
+        </div >
     )
 }
 
