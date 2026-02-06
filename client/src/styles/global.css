@@ -483,11 +483,19 @@ a:hover {
 
 /* === Navigation === */
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 11, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-md) 0;
+  /* Reduced from lg to md */
   border-bottom: 1px solid var(--border-subtle);
+  width: 100%;
 }
 
 .nav-brand {

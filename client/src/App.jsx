@@ -5,9 +5,12 @@ import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
 import Contact from './pages/Contact'
 
+import ScrollToTop from './components/ScrollToTop'
+
 function App() {
     return (
         <Router>
+            <ScrollToTop />
             <Navigation />
             <Routes>
                 <Route path="/" element={<Home />} />
