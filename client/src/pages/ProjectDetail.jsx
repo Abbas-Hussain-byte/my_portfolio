@@ -40,10 +40,15 @@ function ProjectDetail() {
                     alignItems: 'center',
                     gap: '8px',
                     marginBottom: '32px',
-                    fontSize: '14px',
-                    color: 'var(--text-secondary)'
-                }}>
-                    <ArrowLeft size={16} /> Back to projects
+                    fontSize: '16px', // Increased size
+                    fontWeight: 600,
+                    color: 'var(--accent-primary)', // Made color pop
+                    transition: 'transform 0.2s ease',
+                }}
+                    onMouseEnter={(e) => e.target.style.transform = 'translateX(-4px)'}
+                    onMouseLeave={(e) => e.target.style.transform = 'translateX(0)'}
+                >
+                    <ArrowLeft size={20} /> Back to projects
                 </Link>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '32px' }}>
@@ -56,13 +61,13 @@ function ProjectDetail() {
 
                     <div style={{ display: 'flex', gap: '12px' }}>
                         {project.links.github && (
-                            <a href={project.links.github} className="btn btn-secondary" style={{ fontSize: '12px', padding: '8px 16px' }}>
-                                <Github size={16} /> GitHub
+                            <a href={project.links.github} className="btn btn-secondary" style={{ fontSize: '14px', padding: '10px 20px' }}>
+                                <Github size={18} /> GitHub
                             </a>
                         )}
                         {project.links.demo && (
-                            <a href={project.links.demo} className="btn btn-primary" style={{ fontSize: '12px', padding: '8px 16px' }}>
-                                <ExternalLink size={16} /> Live Demo
+                            <a href={project.links.demo} className="btn btn-primary" style={{ fontSize: '14px', padding: '10px 20px' }}>
+                                <ExternalLink size={18} /> Live Demo
                             </a>
                         )}
                     </div>

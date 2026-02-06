@@ -9,7 +9,7 @@ export const projectsData = [
         metrics: {
             users: 'Active Demo',
             features: 'Dynamic Charts',
-            coverage: 'Gov Schemes'
+            focus: 'Career Guide'
         },
         status: 'LIVE',
         links: {
