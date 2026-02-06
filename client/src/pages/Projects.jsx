@@ -76,12 +76,19 @@ function Projects() {
                 </div>
 
                 {activeTab === 'projects' ? (
-                    <motion.div variants={containerVariants} className="projects-grid">
-                        {projectsData.map((project) => (
-                            <motion.div key={project.slug} variants={itemVariants}>
-                                <ProjectCard project={project} />
-                            </motion.div>
-                        ))}
+                    <motion.div variants={containerVariants}>
+                        <div className="projects-grid">
+                            {projectsData.map((project) => (
+                                <motion.div key={project.slug} variants={itemVariants}>
+                                    <ProjectCard project={project} />
+                                </motion.div>
+                            ))}
+                        </div>
+                        <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'center', marginTop: '48px' }}>
+                            <a href="https://github.com/Abbas-Hussain-byte" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                                See More Projects on GitHub <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+                            </a>
+                        </motion.div>
                     </motion.div>
                 ) : (
                     <motion.div

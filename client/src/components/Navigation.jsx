@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { Home, Cpu } from 'lucide-react'
 import resumePdf from '../assets/resume.pdf'
 
 function Navigation() {
@@ -40,6 +41,26 @@ function Navigation() {
                 </Link>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
                     <ul className="nav-links">
+                        <li>
+                            <Link to="/" className={isActive('/')} title="Home">
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <Home size={16} /> <span className="nav-text">Home</span>
+                                </span>
+                            </Link>
+                        </li>
+                        <li>
+                            <a href="/#skills" title="Technical Arsenal" onClick={(e) => {
+                                // Smooth scroll if on home page
+                                if (window.location.pathname === '/') {
+                                    e.preventDefault();
+                                    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}>
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <Cpu size={16} /> <span className="nav-text">Skills</span>
+                                </span>
+                            </a>
+                        </li>
                         <li><Link to="/projects" className={isActive('/projects')}>Projects</Link></li>
                         <li><Link to="/contact" className={isActive('/contact')}>Contact</Link></li>
                         <li><a href={resumePdf} download="Abbas_Hussain_Resume" className="nav-link">Resume</a></li>

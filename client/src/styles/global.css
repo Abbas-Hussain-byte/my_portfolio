@@ -117,6 +117,27 @@ h3 {
   font-variant-numeric: tabular-nums;
 }
 
+.hero-name {
+  background-size: 200% auto !important;
+  animation: shine 8s linear infinite;
+  cursor: default;
+  transition: all 0.4s var(--ease-mechanical);
+}
+
+.hero-name:hover {
+  background-image: linear-gradient(to right, #fff, var(--accent-primary), #fff) !important;
+  animation: shine 2s linear infinite;
+  text-shadow: 0 0 30px var(--accent-primary), 0 0 60px rgba(0, 217, 255, 0.5);
+  transform: scale(1.05);
+  letter-spacing: 0.02em;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
 /* === Layout === */
 .container {
   max-width: var(--max-width);
@@ -270,9 +291,15 @@ a:hover {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--border-strong);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 40px -10px rgba(0, 217, 255, 0.15), 0 0 15px rgba(0, 217, 255, 0.1);
+  background: linear-gradient(to bottom right, var(--bg-secondary), rgba(0, 217, 255, 0.03));
+  z-index: 10;
+}
+
+.project-card:hover .project-card-title {
+  color: var(--accent-primary);
 }
 
 .project-card:hover::before {
@@ -291,6 +318,7 @@ a:hover {
   font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .project-card-label {
@@ -471,7 +499,8 @@ a:hover {
 
 .nav-links {
   display: flex;
-  gap: var(--spacing-xl);
+  gap: 64px;
+  /* Increased gap */
   list-style: none;
 }
 
@@ -480,7 +509,8 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-secondary);
-  font-weight: 500;
+  font-weight: 700;
+  /* Increased from 500 */
 }
 
 .nav-links a:hover,

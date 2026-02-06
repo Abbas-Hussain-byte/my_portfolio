@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import CheckeredFlag from '../components/CheckeredFlag'
-import { RacingHelmet, Terminal, Speedometer, Laptop, CircuitBoard } from '../components/TechIcons'
+import { RacingHelmet, Terminal, Speedometer, Laptop, CircuitBoard, Database } from '../components/TechIcons'
 
 // Animation Variants
 const containerVariants = {
@@ -15,6 +15,19 @@ const containerVariants = {
         }
     }
 }
+
+const skillsData = [
+    { name: 'React', icon: CircuitBoard },
+    { name: 'Node.js', icon: Terminal },
+    { name: 'MongoDB', icon: Database },
+    { name: 'Express', icon: Laptop }, // Laptop as placeholder for server/framework
+    { name: 'JavaScript', icon: Terminal },
+    { name: 'Java', icon: Laptop },
+    { name: 'Python', icon: Terminal },
+    { name: 'MySQL', icon: Database },
+    { name: 'PostgreSQL', icon: Database },
+    { name: 'Git', icon: CircuitBoard }
+];
 
 const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -55,8 +68,22 @@ function Home() {
                     <CircuitBoard size={40} color="var(--accent-highlight)" />
                 </motion.div>
 
-                <motion.h1 variants={itemVariants} style={{ marginBottom: '24px', textAlign: 'center' }}>
-                    Abbas Hussain
+                <motion.h1
+                    variants={itemVariants}
+                    style={{
+                        marginBottom: '24px',
+                        textAlign: 'center',
+                        fontSize: '56px', // Smaller as requested
+                        letterSpacing: 'normal',
+                        wordSpacing: '12px', // More distance between names
+                        background: 'linear-gradient(to right, #ffffff, #888888, #ffffff)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        textShadow: '0 0 40px rgba(255,255,255,0.1)'
+                    }}
+                    className="hero-name"
+                >
+                    ABBAS    HUSSAIN
                 </motion.h1>
 
                 <motion.p
@@ -124,19 +151,28 @@ function Home() {
                 >
                     <div style={{ marginBottom: '8px' }}>
                         <span style={{ color: 'var(--text-tertiary)' }}>CURRENTLY:</span>{' '}
-                        <span style={{ color: 'var(--text-secondary)' }}>Exploring backend & performance optimization</span>
+                        <span style={{ color: 'var(--text-secondary)' }}>Developing optimized Full-Stack & AI/ML solutions</span>
                     </div>
                     <div>
-                        <span style={{ color: 'var(--text-tertiary)' }}>LEARNING:</span>{' '}
-                        <span style={{ color: 'var(--text-secondary)' }}>Distributed systems, algorithms & AI/ML</span>
+                        <span style={{ color: 'var(--text-tertiary)' }}>FOCUS:</span>{' '}
+                        <span style={{ color: 'var(--text-secondary)' }}>Problem Solving, RDBMS, Backend & Advanced Git</span>
                     </div>
                 </motion.div>
+            </motion.section>
 
-                {/* Skills Section */}
+            {/* Skills Section - Separate from Hero for better spacing */}
+            <motion.section
+                id="skills"
+                className="section"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={containerVariants}
+                style={{ paddingTop: '0' }}
+            >
                 <motion.div
                     variants={itemVariants}
                     style={{
-                        marginTop: '64px',
                         width: '100%'
                     }}
                 >
@@ -153,13 +189,10 @@ function Home() {
                                 }
                             }
                         }}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
                     >
-                        {['React', 'Node.js', 'MongoDB', 'Express', 'JavaScript', 'Java', 'Python', 'MySQL', 'PostgreSQL', 'Git'].map((skill) => (
+                        {skillsData.map((skill) => (
                             <motion.div
-                                key={skill}
+                                key={skill.name}
                                 className="skill-card"
                                 variants={{
                                     hidden: { y: 30, opacity: 0, scale: 0.9 },
@@ -177,14 +210,18 @@ function Home() {
                                 }}
                                 whileHover={{
                                     scale: 1.05,
-                                    y: -5,
+                                    y: -8,
                                     transition: { duration: 0.2, ease: "easeOut" },
-                                    boxShadow: "0 10px 30px -10px rgba(0, 217, 255, 0.4)",
-                                    borderColor: "var(--accent-primary)"
+                                    boxShadow: "0 14px 28px rgba(0, 217, 255, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)",
+                                    borderColor: "var(--accent-primary)",
+                                    backgroundColor: "rgba(255, 255, 255, 0.03)"
                                 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{skill}</span>
+                                <div style={{ marginBottom: '8px', color: 'var(--accent-primary)', opacity: 0.8 }}>
+                                    <skill.icon size={28} />
+                                </div>
+                                <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{skill.name}</span>
                             </motion.div>
                         ))}
                     </motion.div>

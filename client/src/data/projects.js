@@ -40,7 +40,7 @@ A personal career and education advisor helping students navigate their future.
             tech: 'GenAI / RAG',
             result: 'High Accuracy'
         },
-        status: 'ARCHIVED',
+        status: 'IN PROGRESS',
         links: {
             github: 'https://github.com/Abbas-Hussain-byte/bajaj-finserv-hackrx',
             demo: null,
