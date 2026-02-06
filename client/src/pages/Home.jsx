@@ -43,7 +43,7 @@ function Home() {
         <div className="container">
             <motion.section
                 className="section hero-with-grid"
-                style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+                style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginBottom: '80px' }}
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
@@ -92,32 +92,33 @@ function Home() {
                         fontSize: '20px',
                         lineHeight: '1.6',
                         color: 'var(--text-secondary)',
-                        maxWidth: '700px',
+                        maxWidth: '800px', // Wider to prevent 3 lines
                         marginBottom: '16px',
                         textAlign: 'center',
                         marginLeft: 'auto',
                         marginRight: 'auto'
                     }}
                 >
-                    CS student and tech enthusiast developing solutions using <span style={{ color: 'var(--accent-primary)' }}>full stack</span> and <span style={{ color: 'var(--accent-primary)' }}>AI/ML</span> technology.
+                    CS student & tech enthusiast engineering <span style={{ color: 'var(--accent-primary)' }}>Full Stack</span> and <span style={{ color: 'var(--accent-primary)' }}>AI/ML</span> solutions.
+                    <br />
+                    Focused on clean code, performance, and iterative improvement.
                 </motion.p>
 
                 <motion.p
                     variants={itemVariants}
                     style={{
-                        fontSize: '16px',
-                        lineHeight: '1.7',
-                        color: 'var(--text-tertiary)',
-                        maxWidth: '650px',
-                        marginBottom: '32px',
+                        fontSize: '18px',
+                        color: 'var(--text-primary)',
                         fontStyle: 'italic',
+                        marginTop: '-8px', // Pull it closer
+                        marginBottom: '32px',
                         textAlign: 'center',
-                        marginLeft: 'auto',
-                        marginRight: 'auto'
+                        opacity: 0.9
                     }}
                 >
-                    Building software with focus on clean code, measured performance, and iterative improvement.
+                    "I tell machines what to do and sometimes they listen."
                 </motion.p>
+
 
                 <motion.div
                     variants={itemVariants}
