@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Mail, Github, Linkedin, FileDown, Trophy } from 'lucide-react'
 import CheckeredFlag from '../components/CheckeredFlag'
 import { Terminal, Gear } from '../components/TechIcons'
-import { PitStopLoader, SpinningTire } from '../components/F1Animations'
+import { TeamRadioHeadset, DataStream } from '../components/F1Animations'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -38,8 +38,8 @@ function Contact() {
 
                     {/* Animated Graphics */}
                     <motion.div variants={itemVariants} style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-                        <PitStopLoader size={65} />
-                        <SpinningTire size={60} speed={3} />
+                        <TeamRadioHeadset size={70} />
+                        <DataStream size={60} />
                     </motion.div>
 
                     {/* Static Icons */}

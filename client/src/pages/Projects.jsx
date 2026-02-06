@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import ProjectCard from '../components/ProjectCard'
 import { projectsData } from '../data/projects'
 import { RacingFlag, Speedometer, Database } from '../components/TechIcons'
-import { WavingFlag, SteeringWheel } from '../components/F1Animations'
+import { WavingFlag, TelemetryDashboard } from '../components/F1Animations'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -40,7 +40,7 @@ function Projects() {
                         {/* Animated Graphics */}
                         <motion.div variants={itemVariants} style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
                             <WavingFlag size={90} />
-                            <SteeringWheel size={70} />
+                            <TelemetryDashboard size={70} />
                         </motion.div>
 
                         {/* Static Icons */}

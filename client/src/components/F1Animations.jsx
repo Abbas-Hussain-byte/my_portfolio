@@ -91,30 +91,46 @@ export const SpinningTire = ({ size = 80, speed = 2 }) => (
 );
 
 // Rotating Steering Wheel - Enhanced
-export const SteeringWheel = ({ size = 100 }) => (
-    <div className="steering-container-3d" style={{ width: size, height: size }}>
-        <div className="steering-wheel-3d">
-            {/* Wheel rim */}
-            <div className="wheel-rim-outer"></div>
-            <div className="wheel-rim-inner"></div>
+// Telemetry Dashboard - High Tech & Minimalist
+export const TelemetryDashboard = ({ size = 100 }) => (
+    <div className="telemetry-dashboard-container" style={{ width: size * 1.5, height: size }}>
+        <svg viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Main Frame */}
+            <rect x="5" y="5" width="140" height="90" rx="4" stroke="var(--border-subtle)" strokeWidth="1" fill="var(--bg-tertiary)" />
 
-            {/* Left grip */}
-            <div className="grip grip-left"></div>
+            {/* Header / RPM Bar */}
+            <rect x="15" y="15" width="120" height="8" rx="2" fill="var(--bg-secondary)" />
+            <rect x="15" y="15" width="80" height="8" rx="2" fill="var(--accent-primary)">
+                <animate attributeName="width" values="20;100;60;80" dur="2s" repeatCount="indefinite" />
+            </rect>
 
-            {/* Right grip */}
-            <div className="grip grip-right"></div>
+            {/* Metric Graphs */}
+            <g transform="translate(15, 35)">
+                {/* Graph 1 */}
+                <rect x="0" y="0" width="35" height="40" rx="2" stroke="var(--border-subtle)" strokeWidth="1" />
+                <path d="M5 30 L10 25 L15 28 L20 15 L25 18 L30 10" stroke="var(--accent-success)" strokeWidth="1.5" fill="none" />
+            </g>
 
-            {/* Spokes */}
-            <div className="spoke-vertical"></div>
-            <div className="spoke-horizontal"></div>
+            <g transform="translate(58, 35)">
+                {/* Central Data Display */}
+                <text x="17" y="20" fill="var(--text-primary)" fontSize="14" fontWeight="bold" textAnchor="middle">246</text>
+                <text x="17" y="32" fill="var(--text-tertiary)" fontSize="8" textAnchor="middle">KPH</text>
+            </g>
 
-            {/* Center hub with buttons */}
-            <div className="wheel-center">
-                <div className="button button-1"></div>
-                <div className="button button-2"></div>
-                <div className="display-screen">DRS</div>
-            </div>
-        </div>
+            <g transform="translate(93, 35)">
+                {/* Graph 2 */}
+                <rect x="0" y="0" width="35" height="40" rx="2" stroke="var(--border-subtle)" strokeWidth="1" />
+                <rect x="5" y="25" width="5" height="10" fill="var(--accent-warning)" />
+                <rect x="12" y="15" width="5" height="20" fill="var(--accent-warning)" />
+                <rect x="19" y="20" width="5" height="15" fill="var(--accent-warning)" />
+                <rect x="26" y="10" width="5" height="25" fill="var(--accent-warning)" />
+            </g>
+
+            {/* Footer indicators */}
+            <circle cx="20" cy="85" r="3" fill="var(--accent-success)" />
+            <circle cx="30" cy="85" r="3" fill="var(--text-tertiary)" />
+            <circle cx="40" cy="85" r="3" fill="var(--text-tertiary)" />
+        </svg>
     </div>
 );
 
@@ -151,15 +167,57 @@ export const CodeTyping = ({ size = 120 }) => (
     </div>
 );
 
-// Loading Spinner (Pit Stop themed) - Enhanced
-export const PitStopLoader = ({ size = 60 }) => (
-    <div className="pit-stop-loader-3d" style={{ width: size, height: size }}>
-        <div className="loader-outer-ring"></div>
-        <div className="loader-middle-ring"></div>
-        <div className="wrench-icon">
-            <div className="wrench-handle"></div>
-            <div className="wrench-head"></div>
-        </div>
+// Team Radio Headset - Communication Theme
+export const TeamRadioHeadset = ({ size = 80 }) => (
+    <div className="headset-container" style={{ width: size, height: size }}>
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Headband */}
+            <path d="M20 60 V40 C20 20 80 20 80 40 V60" stroke="var(--border-strong)" strokeWidth="6" strokeLinecap="round" />
+
+            {/* Ear cups */}
+            <rect x="10" y="55" width="20" height="30" rx="4" fill="var(--bg-tertiary)" stroke="var(--accent-primary)" strokeWidth="2" />
+            <rect x="70" y="55" width="20" height="30" rx="4" fill="var(--bg-tertiary)" stroke="var(--accent-primary)" strokeWidth="2" />
+
+            {/* Microphone Boom */}
+            <path d="M20 80 L40 90 L60 85" stroke="var(--text-secondary)" strokeWidth="3" fill="none" />
+
+            {/* Mic Tip (Pulsing) */}
+            <circle cx="60" cy="85" r="4" fill="var(--accent-success)">
+                <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite" />
+            </circle>
+
+            {/* Sound Waves */}
+            <path d="M75 30 Q85 30 85 40" stroke="var(--accent-primary)" strokeWidth="2" opacity="0.6">
+                <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+            </path>
+            <path d="M80 25 Q95 25 95 40" stroke="var(--accent-primary)" strokeWidth="2" opacity="0.4">
+                <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.3s" repeatCount="indefinite" />
+            </path>
+        </svg>
+    </div>
+);
+
+// Data Stream - Tech Contact Theme
+export const DataStream = ({ size = 80 }) => (
+    <div className="datastream-container" style={{ width: size, height: size }}>
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Binary Stream Background */}
+            <text x="50" y="20" fontSize="8" fill="var(--border-subtle)" textAnchor="middle" fontFamily="monospace">10100101</text>
+            <text x="50" y="35" fontSize="8" fill="var(--border-subtle)" textAnchor="middle" fontFamily="monospace">01011010</text>
+            <text x="50" y="50" fontSize="8" fill="var(--border-subtle)" textAnchor="middle" fontFamily="monospace">11001100</text>
+            <text x="50" y="65" fontSize="8" fill="var(--border-subtle)" textAnchor="middle" fontFamily="monospace">00110011</text>
+            <text x="50" y="80" fontSize="8" fill="var(--border-subtle)" textAnchor="middle" fontFamily="monospace">10101010</text>
+
+            {/* Signal Pulse */}
+            <circle cx="50" cy="50" r="30" stroke="var(--accent-primary)" strokeWidth="1" opacity="0.5">
+                <animate attributeName="r" values="10;40" dur="2s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite" />
+            </circle>
+
+            {/* Central Node */}
+            <circle cx="50" cy="50" r="8" fill="var(--bg-secondary)" stroke="var(--accent-primary)" strokeWidth="2" />
+            <circle cx="50" cy="50" r="4" fill="var(--accent-primary)" />
+        </svg>
     </div>
 );
 
@@ -190,8 +248,9 @@ export const WavingFlag = ({ size = 80 }) => (
 export default {
     AnimatedF1Car,
     SpinningTire,
-    SteeringWheel,
+    TeamRadioHeadset,
+    DataStream,
+    TelemetryDashboard,
     CodeTyping,
-    PitStopLoader,
     WavingFlag
 };
