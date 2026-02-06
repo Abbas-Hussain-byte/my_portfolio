@@ -131,6 +131,64 @@ function Home() {
                         <span style={{ color: 'var(--text-secondary)' }}>Distributed systems, algorithms & AI/ML</span>
                     </div>
                 </motion.div>
+
+                {/* Skills Section */}
+                <motion.div
+                    variants={itemVariants}
+                    style={{
+                        marginTop: '64px',
+                        width: '100%'
+                    }}
+                >
+                    <h3 style={{ textAlign: 'center', marginBottom: '40px', color: 'var(--text-primary)', fontSize: '32px', fontWeight: 'bold', letterSpacing: '-0.02em' }}>Technical Arsenal</h3>
+                    <motion.div
+                        className="skills-grid"
+                        variants={{
+                            hidden: { opacity: 0 },
+                            visible: {
+                                opacity: 1,
+                                transition: {
+                                    staggerChildren: 0.08,
+                                    delayChildren: 0.2
+                                }
+                            }
+                        }}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                    >
+                        {['React', 'Node.js', 'MongoDB', 'Express', 'JavaScript', 'Java', 'Python', 'MySQL', 'PostgreSQL', 'Git'].map((skill) => (
+                            <motion.div
+                                key={skill}
+                                className="skill-card"
+                                variants={{
+                                    hidden: { y: 30, opacity: 0, scale: 0.9 },
+                                    visible: {
+                                        y: 0,
+                                        opacity: 1,
+                                        scale: 1,
+                                        transition: {
+                                            type: "spring",
+                                            stiffness: 40,
+                                            damping: 10,
+                                            mass: 1
+                                        }
+                                    }
+                                }}
+                                whileHover={{
+                                    scale: 1.05,
+                                    y: -5,
+                                    transition: { duration: 0.2, ease: "easeOut" },
+                                    boxShadow: "0 10px 30px -10px rgba(0, 217, 255, 0.4)",
+                                    borderColor: "var(--accent-primary)"
+                                }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{skill}</span>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </motion.div>
             </motion.section>
         </div >
     )

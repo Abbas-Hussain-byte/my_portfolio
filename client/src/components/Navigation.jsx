@@ -41,6 +41,7 @@ function Navigation() {
                     <ul className="nav-links">
                         <li><Link to="/projects" className={isActive('/projects')}>Projects</Link></li>
                         <li><Link to="/contact" className={isActive('/contact')}>Contact</Link></li>
+                        <li><a href="/resume.pdf" download className="nav-link">Resume</a></li>
                     </ul>
                     <button
                         onClick={toggleTheme}

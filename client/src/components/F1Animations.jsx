@@ -113,8 +113,8 @@ export const TelemetryDashboard = ({ size = 100 }) => (
 
             <g transform="translate(58, 35)">
                 {/* Central Data Display */}
-                <text x="17" y="20" fill="var(--text-primary)" fontSize="14" fontWeight="bold" textAnchor="middle">246</text>
-                <text x="17" y="32" fill="var(--text-tertiary)" fontSize="8" textAnchor="middle">KPH</text>
+                <text x="17" y="20" fill="var(--text-primary)" fontSize="14" fontWeight="bold" textAnchor="middle">12+</text>
+                <text x="17" y="32" fill="var(--text-tertiary)" fontSize="7" textAnchor="middle">PROJECTS</text>
             </g>
 
             <g transform="translate(93, 35)">
