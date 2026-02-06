@@ -3,6 +3,7 @@ import { Mail, Github, Linkedin, FileDown, Trophy } from 'lucide-react'
 import CheckeredFlag from '../components/CheckeredFlag'
 import { Terminal, Gear } from '../components/TechIcons'
 import { TeamRadioHeadset, DataStream } from '../components/F1Animations'
+import resumePdf from '../assets/resume.pdf'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -64,7 +65,7 @@ function Contact() {
                         { href: "https://github.com/Abbas-Hussain-byte", icon: Github, label: "GITHUB", value: "Abbas-Hussain-byte", color: "var(--accent-primary)" },
                         { href: "https://www.linkedin.com/in/abbashussain23/", icon: Linkedin, label: "LINKEDIN", value: "abbashussain23", color: "var(--accent-primary)" },
                         { href: "https://smartinterviews.in/profile/abbas_hussain", icon: Trophy, label: "DSA DASHBOARD", value: "Problem Solving Profile", color: "var(--accent-success)" },
-                        { href: "/resume.pdf", icon: FileDown, label: "RESUME", value: "Download PDF", color: "var(--accent-primary)", download: true }
+                        { href: resumePdf, icon: FileDown, label: "RESUME", value: "Download PDF", color: "var(--accent-primary)", download: "Abbas_Hussain_Resume" }
                     ].map((item, index) => (
                         <motion.a
                             key={index}
@@ -124,15 +125,6 @@ function Contact() {
                     <CheckeredFlag size={28} />
                     <div className="section-divider-line"></div>
                 </motion.div>
-
-                <motion.p variants={itemVariants} style={{
-                    textAlign: 'center',
-                    fontSize: '14px',
-                    color: 'var(--text-tertiary)',
-                    fontStyle: 'italic'
-                }}>
-                    Note: Add your resume.pdf file to the /public folder
-                </motion.p>
             </motion.section>
         </div>
     )

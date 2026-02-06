@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import resumePdf from '../assets/resume.pdf'
 
 function Navigation() {
     const location = useLocation()
@@ -41,7 +42,7 @@ function Navigation() {
                     <ul className="nav-links">
                         <li><Link to="/projects" className={isActive('/projects')}>Projects</Link></li>
                         <li><Link to="/contact" className={isActive('/contact')}>Contact</Link></li>
-                        <li><a href="/resume.pdf" download className="nav-link">Resume</a></li>
+                        <li><a href={resumePdf} download="Abbas_Hussain_Resume" className="nav-link">Resume</a></li>
                     </ul>
                     <button
                         onClick={toggleTheme}
