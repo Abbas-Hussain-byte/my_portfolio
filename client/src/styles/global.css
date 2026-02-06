@@ -146,7 +146,7 @@ h3 {
 }
 
 .section {
-  padding: var(--spacing-2xl) 0;
+  padding: 64px 0;
 }
 
 /* === Links === */

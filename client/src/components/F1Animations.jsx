@@ -174,9 +174,9 @@ export const TeamRadioHeadset = ({ size = 80 }) => (
             {/* Headband */}
             <path d="M20 60 V40 C20 20 80 20 80 40 V60" stroke="var(--border-strong)" strokeWidth="6" strokeLinecap="round" />
 
-            {/* Ear cups */}
-            <rect x="10" y="55" width="20" height="30" rx="4" fill="var(--bg-tertiary)" stroke="var(--accent-primary)" strokeWidth="2" />
-            <rect x="70" y="55" width="20" height="30" rx="4" fill="var(--bg-tertiary)" stroke="var(--accent-primary)" strokeWidth="2" />
+            {/* Ear cups - Sharper/Rectangular */}
+            <rect x="10" y="55" width="22" height="32" rx="1" fill="var(--bg-tertiary)" stroke="var(--accent-primary)" strokeWidth="2" />
+            <rect x="68" y="55" width="22" height="32" rx="1" fill="var(--bg-tertiary)" stroke="var(--accent-primary)" strokeWidth="2" />
 
             {/* Microphone Boom */}
             <path d="M20 80 L40 90 L60 85" stroke="var(--text-secondary)" strokeWidth="3" fill="none" />
