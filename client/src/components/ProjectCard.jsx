@@ -18,15 +18,17 @@ function ProjectCard({ project }) {
     const f1Status = getF1Status(project.status);
 
     return (
-        <Link to={`/projects/${project.slug}`} style={{ textDecoration: 'none', border: 'none' }}>
-            <div className="project-card">
-                <div className="project-card-header">
+        <div className="project-card">
+            <div className="project-card-header">
+                <Link to={`/projects/${project.slug}`} style={{ textDecoration: 'none', border: 'none' }}>
                     <h3 className="project-card-title">{project.name}</h3>
-                    <span className={`status ${f1Status.class}`}>
-                        {f1Status.text}
-                    </span>
-                </div>
+                </Link>
+                <span className={`status ${f1Status.class}`}>
+                    {f1Status.text}
+                </span>
+            </div>
 
+            <Link to={`/projects/${project.slug}`} style={{ textDecoration: 'none', border: 'none', flex: 1 }}>
                 <div className="project-card-label">CONSTRAINT</div>
                 <p className="project-card-content">{project.constraint}</p>
 
@@ -44,18 +46,37 @@ function ProjectCard({ project }) {
                 <p className="project-card-content mono" style={{ color: 'var(--accent-success)' }}>
                     {project.impact}
                 </p>
+            </Link>
 
-                <div className="project-card-links">
-                    {project.links.github && (
-                        <span style={{ fontSize: '13px', color: 'var(--accent-primary)' }}>GitHub →</span>
-                    )}
-                    {project.links.demo && (
-                        <span style={{ fontSize: '13px', color: 'var(--accent-primary)' }}>Demo →</span>
-                    )}
-                    <span style={{ fontSize: '13px', color: 'var(--accent-primary)' }}>Details →</span>
-                </div>
+            <div className="project-card-links">
+                {project.links.github && (
+                    <a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600, zIndex: 20 }}
+                    >
+                        GitHub →
+                    </a>
+                )}
+                {project.links.demo && (
+                    <a
+                        href={project.links.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600, zIndex: 20 }}
+                    >
+                        Demo →
+                    </a>
+                )}
+                <Link
+                    to={`/projects/${project.slug}`}
+                    style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600, zIndex: 20 }}
+                >
+                    Details →
+                </Link>
             </div>
-        </Link>
+        </div>
     )
 }
 
