@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import CheckeredFlag from '../components/CheckeredFlag'
 import { RacingHelmet, Terminal, Speedometer, Laptop, CircuitBoard } from '../components/TechIcons'
-// import Scene3D from '../components/Scene3D'
+import { AnimatedF1Car, SpinningTire, TelemetryDashboard } from '../components/F1Animations'
 
 // Animation Variants
 const containerVariants = {
@@ -37,37 +37,53 @@ function Home() {
                 variants={containerVariants}
             >
 
-                {/* Animated F1 Car - Hero Graphic */}
+                {/* Hero Graphic - Animated Telemetry HUD */}
                 <motion.div
                     variants={itemVariants}
                     style={{
                         width: '100%',
-                        height: '400px',
-                        marginBottom: '40px',
+                        height: '350px',
+                        marginBottom: '48px',
                         borderRadius: '16px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         border: '1px solid var(--border-subtle)',
                         background: 'var(--bg-secondary)',
-                        color: 'var(--text-secondary)',
                         position: 'relative',
-                        overflow: 'hidden'
+                        overflow: 'hidden',
+                        boxShadow: 'inset 0 0 40px rgba(0,0,0,0.5)'
                     }}
                 >
-                    {/* <Scene3D /> */}
-                    <div className="mono" style={{ zIndex: 2, textAlign: 'center' }}>
-                        <div style={{ color: 'var(--accent-warning)', marginBottom: '8px', fontSize: '14px' }}>[ SYSTEM STATUS: OFFLINE ]</div>
-                        <div style={{ color: 'var(--text-tertiary)', fontSize: '12px' }}>3D VISUALIZATION TEMPORARILY DISABLED</div>
+                    <div style={{ zIndex: 2, textAlign: 'center' }}>
+                        <TelemetryDashboard size={200} />
+                        <motion.div
+                            className="mono"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 1, duration: 1 }}
+                            style={{ color: 'var(--accent-primary)', fontSize: '10px', marginTop: '16px', letterSpacing: '4px' }}
+                        >
+                            SYSTEM STATUS: OPTIMAL // READY TO RACE
+                        </motion.div>
                     </div>
-                    {/* Decorative grid for the placeholder */}
-                    <div style={{
+
+                    {/* Decorative grid & scanlines */}
+                    <div className="hud-grid" style={{
                         position: 'absolute',
                         inset: 0,
-                        opacity: 0.1,
+                        opacity: 0.15,
                         backgroundImage: 'linear-gradient(var(--border-subtle) 1px, transparent 1px), linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px)',
-                        backgroundSize: '20px 20px',
+                        backgroundSize: '30px 30px',
                         pointerEvents: 'none'
+                    }}></div>
+                    <div className="scanline" style={{
+                        position: 'absolute',
+                        width: '100%',
+                        height: '2px',
+                        background: 'rgba(255, 255, 255, 0.03)',
+                        top: '0',
+                        animation: 'scanline 8s linear infinite'
                     }}></div>
                 </motion.div>
 

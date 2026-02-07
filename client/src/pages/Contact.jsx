@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { Mail, Github, Linkedin, FileDown, Trophy } from 'lucide-react'
+import { Mail, Github, Linkedin, FileDown, Trophy, Terminal, Settings as Gear } from 'lucide-react'
 import CheckeredFlag from '../components/CheckeredFlag'
-import { Terminal, Gear } from '../components/TechIcons'
 import { TeamRadioHeadset, DataStream } from '../components/F1Animations'
+import ContactForm from '../components/ContactForm'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -52,74 +52,87 @@ function Contact() {
                     Open to opportunities in full-stack development, AI/ML projects, and collaborative problem-solving.
                 </motion.p>
 
-                <div style={{
+                <div className="contact-grid" style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                    gap: '24px',
-                    maxWidth: '900px'
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                    gap: '40px',
+                    alignItems: 'start'
                 }}>
-                    {/* Contact Cards */}
-                    {[
-                        { href: "mailto:abbashussain0986@gmail.com", icon: Mail, label: "EMAIL", value: "abbashussain0986@gmail.com", color: "var(--accent-primary)" },
-                        { href: "https://github.com/Abbas-Hussain-byte", icon: Github, label: "GITHUB", value: "Abbas-Hussain-byte", color: "var(--accent-primary)" },
-                        { href: "https://www.linkedin.com/in/abbashussain23/", icon: Linkedin, label: "LINKEDIN", value: "abbashussain23", color: "var(--accent-primary)" },
-                        { href: "https://smartinterviews.in/profile/abbas_hussain", icon: Trophy, label: "DSA DASHBOARD", value: "Problem Solving Profile", color: "var(--accent-success)" },
-                        { href: "/resume.pdf", icon: FileDown, label: "RESUME", value: "Download PDF", color: "var(--accent-primary)", download: true }
-                    ].map((item, index) => (
-                        <motion.a
-                            key={index}
-                            href={item.href}
-                            target={item.href.startsWith('mailto') ? undefined : "_blank"}
-                            rel={item.href.startsWith('mailto') ? undefined : "noopener noreferrer"}
-                            download={item.download} // Allow downloading for resume
+                    {/* Left Column: Form */}
+                    <motion.div variants={itemVariants}>
+                        <div className="mono" style={{ fontSize: '12px', color: 'var(--accent-success)', marginBottom: '16px', letterSpacing: '2px' }}>
+                            // SECURE TRANSMISSION CHANNEL
+                        </div>
+                        <ContactForm />
+                    </motion.div>
+
+                    {/* Right Column: Cards */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                        <motion.div variants={itemVariants} className="mono" style={{ fontSize: '12px', color: 'var(--accent-primary)', marginBottom: '8px', letterSpacing: '2px' }}>
+                            // ALTERNATIVE TELEMETRY
+                        </motion.div>
+                        {[
+                            { href: "mailto:abbashussain0986@gmail.com", icon: Mail, label: "EMAIL", value: "abbashussain0986@gmail.com", color: "var(--accent-primary)" },
+                            { href: "https://github.com/Abbas-Hussain-byte", icon: Github, label: "GITHUB", value: "Abbas-Hussain-byte", color: "var(--accent-primary)" },
+                            { href: "https://www.linkedin.com/in/abbashussain23/", icon: Linkedin, label: "LINKEDIN", value: "abbashussain23", color: "var(--accent-primary)" },
+                            { href: "https://smartinterviews.in/profile/abbas_hussain", icon: Trophy, label: "DSA DASHBOARD", value: "Problem Solving Profile", color: "var(--accent-success)" },
+                            { href: "/resume.pdf", icon: FileDown, label: "RESUME", value: "Download PDF", color: "var(--accent-primary)", download: true }
+                        ].map((item, index) => (
+                            <motion.a
+                                key={index}
+                                href={item.href}
+                                target={item.href.startsWith('mailto') ? undefined : "_blank"}
+                                rel={item.href.startsWith('mailto') ? undefined : "noopener noreferrer"}
+                                download={item.download}
+                                variants={itemVariants}
+                                className="glass-card"
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '16px',
+                                    padding: '20px',
+                                    textDecoration: 'none',
+                                    borderRadius: '12px',
+                                    transition: 'transform 0.2s, border-color 0.2s',
+                                }}
+                                whileHover={{ scale: 1.02, borderColor: 'var(--accent-primary)' }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                <item.icon size={20} color={item.color} />
+                                <div>
+                                    <div className="mono" style={{ fontSize: '10px', color: 'var(--text-tertiary)', marginBottom: '2px' }}>
+                                        {item.label}
+                                    </div>
+                                    <div style={{ fontSize: '13px', color: 'var(--text-secondary)', fontWeight: 500 }}>
+                                        {item.value}
+                                    </div>
+                                </div>
+                            </motion.a>
+                        ))}
+
+                        {/* Additional Info Box */}
+                        <motion.div
                             variants={itemVariants}
-                            className="glass-card"
+                            className="glass-panel"
                             style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '16px',
+                                marginTop: '20px',
                                 padding: '24px',
-                                textDecoration: 'none',
                                 borderRadius: '12px',
-                                transition: 'transform 0.2s, border-color 0.2s',
+                                borderLeft: '3px solid var(--accent-warning)'
                             }}
-                            whileHover={{ scale: 1.02, borderColor: 'var(--accent-primary)' }}
-                            whileTap={{ scale: 0.98 }}
                         >
-                            <item.icon size={24} color={item.color} />
-                            <div>
-                                <div className="mono" style={{ fontSize: '11px', color: 'var(--text-tertiary)', marginBottom: '4px' }}>
-                                    {item.label}
-                                </div>
-                                <div style={{ fontSize: '14px', color: 'var(--text-secondary)', fontWeight: 500 }}>
-                                    {item.value}
-                                </div>
+                            <div className="mono" style={{ fontSize: '11px', color: 'var(--text-tertiary)', marginBottom: '12px' }}>
+                                RESPONSE TIME
                             </div>
-                        </motion.a>
-                    ))}
+                            <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                                Typically respond within 24-48 hours. For urgent inquiries, email is fastest.
+                            </p>
+                        </motion.div>
+                    </div>
                 </div>
 
-                {/* Additional Info */}
-                <motion.div
-                    variants={itemVariants}
-                    className="glass-panel"
-                    style={{
-                        marginTop: '64px',
-                        padding: '24px',
-                        borderRadius: '12px',
-                        maxWidth: '600px'
-                    }}
-                >
-                    <div className="mono" style={{ fontSize: '11px', color: 'var(--text-tertiary)', marginBottom: '12px' }}>
-                        RESPONSE TIME
-                    </div>
-                    <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-                        Typically respond within 24-48 hours. For urgent inquiries, email is fastest.
-                    </p>
-                </motion.div>
-
                 {/* Checkered Flag Divider */}
-                <motion.div variants={itemVariants} className="section-divider" style={{ marginTop: '64px' }}>
+                <motion.div variants={itemVariants} className="section-divider" style={{ marginTop: '80px' }}>
                     <div className="section-divider-line"></div>
                     <CheckeredFlag size={28} />
                     <div className="section-divider-line"></div>
