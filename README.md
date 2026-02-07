@@ -1,4 +1,4 @@
-#My Portfolio
+# My Portfolio
 
 A performance-focused developer portfolio built with the MERN stack, applying Formula 1 engineering principles to web development: constraint-driven, telemetry-informed, relentlessly tuned.
 
