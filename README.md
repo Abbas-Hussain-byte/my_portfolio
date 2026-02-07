@@ -1,4 +1,4 @@
-# F1-Inspired Developer Portfolio
+#My Portfolio
 
 A performance-focused developer portfolio built with the MERN stack, applying Formula 1 engineering principles to web development: constraint-driven, telemetry-informed, relentlessly tuned.
 
@@ -153,31 +153,6 @@ Edit CSS variables (lines 12-35):
 --accent-critical: #ff3860;   /* Red - errors */
 --accent-highlight: #9d4eff;  /* Purple - highlights */
 ```
-
-## 🌐 Deployment
-
-### Option 1: Netlify (Recommended)
-
-1. Push code to GitHub
-2. Go to [Netlify](https://netlify.com)
-3. Click "Add new site" → "Import an existing project"
-4. Select your GitHub repo
-5. Build settings:
-   - **Build command**: `npm run build`
-   - **Publish directory**: `dist`
-6. Deploy!
-
-Your site will be live at `https://your-site.netlify.app`
-
-### Option 2: Vercel
-
-1. Push code to GitHub
-2. Go to [Vercel](https://vercel.com)
-3. Click "New Project" → Import your repo
-4. Framework preset: Vite
-5. Deploy!
-
-Your site will be live at `https://your-site.vercel.app`
 
 ## 🔧 Future Enhancements (Optional)
 
