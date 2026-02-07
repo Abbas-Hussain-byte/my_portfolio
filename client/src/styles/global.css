@@ -518,12 +518,23 @@ a:hover {
   letter-spacing: 0.05em;
   color: var(--text-secondary);
   font-weight: 700;
-  /* Increased from 500 */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s var(--ease-mechanical);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+}
+
+.nav-link-with-icon {
+  display: inline-flex;
+  align-items: center;
 }
 
 /* === Grid Layouts === */

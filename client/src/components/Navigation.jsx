@@ -42,27 +42,27 @@ function Navigation() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
                     <ul className="nav-links">
                         <li>
-                            <Link to="/" className={isActive('/')} title="Home">
-                                <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                    <Home size={16} /> <span className="nav-text">Home</span>
-                                </span>
+                            <Link to="/" className={`nav-link-with-icon ${isActive('/')}`} title="Home">
+                                <Home size={16} /> <span className="nav-text">Home</span>
                             </Link>
                         </li>
                         <li>
-                            <a href="/#skills" title="Technical Arsenal" onClick={(e) => {
-                                // Smooth scroll if on home page
-                                if (window.location.pathname === '/') {
-                                    e.preventDefault();
-                                    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
-                                }
-                            }}>
-                                <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                    <Cpu size={16} /> <span className="nav-text">Skills</span>
-                                </span>
-                            </a>
+                            <Link
+                                to="/#skills"
+                                className={`nav-link-with-icon ${location.hash === '#skills' ? 'active' : ''}`}
+                                title="Technical Arsenal"
+                                onClick={(e) => {
+                                    if (location.pathname === '/') {
+                                        e.preventDefault();
+                                        document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                            >
+                                <Cpu size={16} /> <span className="nav-text">Skills</span>
+                            </Link>
                         </li>
-                        <li><Link to="/projects" className={isActive('/projects')}>Projects</Link></li>
-                        <li><Link to="/contact" className={isActive('/contact')}>Contact</Link></li>
+                        <li><Link to="/projects" className={`nav-link ${isActive('/projects')}`}>Projects</Link></li>
+                        <li><Link to="/contact" className={`nav-link ${isActive('/contact')}`}>Contact</Link></li>
                         <li><a href={resumePdf} download="Abbas_Hussain_Resume" className="nav-link">Resume</a></li>
                     </ul>
                     <button
