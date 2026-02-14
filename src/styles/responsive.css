@@ -1,0 +1,171 @@
+/* Base Styles (Desktop Default) */
+.hero-icons-responsive {
+    gap: 32px;
+}
+
+.hero-h1-responsive {
+    font-size: 80px;
+    /* Bigger for polished look */
+    letter-spacing: -0.04em;
+    word-spacing: normal;
+    background: linear-gradient(180deg, #fff 0%, #ccc 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.hero-text-responsive {
+    font-size: 20px;
+}
+
+.project-detail-header-responsive {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.nav-menu-container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.engineering-brief-responsive {
+    padding: 32px;
+}
+
+.brief-grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+/* Navigation Responsive Styles */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Mobile Layout (less than 768px for example) */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-content {
+        flex-wrap: wrap;
+        /* Allow wrapping */
+    }
+
+    .nav-menu-container {
+        position: fixed;
+        top: 70px;
+        /* Adjust based on navbar height */
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-secondary);
+        backdrop-filter: blur(12px);
+        padding: var(--spacing-lg);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        border-bottom: 1px solid var(--border-subtle);
+        z-index: 999;
+    }
+
+    .nav-menu-container.open {
+        transform: translateX(0);
+    }
+
+    /* Adjust links for mobile menu */
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: var(--spacing-md);
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border-subtle);
+        font-size: 18px;
+        /* Larger tap targets */
+    }
+
+    /* Mode toggle in mobile menu */
+    .mode-toggle-container {
+        width: 100%;
+        margin-top: auto;
+        /* Push to bottom or just below links */
+    }
+
+    .mode-toggle-container button {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 16px !important;
+    }
+
+
+    /* Home Page Fixes */
+    .hero-h1-responsive {
+        font-size: 32px !important;
+        /* Force smaller size on mobile */
+        word-spacing: 4px !important;
+        letter-spacing: normal !important;
+    }
+
+    .hero-icons-responsive {
+        flex-wrap: wrap;
+        gap: 16px !important;
+        /* Smaller gap */
+        margin-bottom: 24px !important;
+        margin-top: 24px;
+        padding: 0 16px;
+    }
+
+    .hero-text-responsive {
+        font-size: 16px !important;
+        padding: 0 16px;
+    }
+
+    /* Project Detail Fixes */
+    .project-detail-header-responsive {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 16px;
+    }
+
+    .project-header-actions {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .engineering-brief-responsive {
+        padding: 16px;
+    }
+
+    .brief-grid-responsive {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .section {
+        padding: 32px 0;
+    }
+}

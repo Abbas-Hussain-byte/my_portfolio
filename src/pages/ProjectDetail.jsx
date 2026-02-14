@@ -51,7 +51,7 @@ function ProjectDetail() {
                     <ArrowLeft size={20} /> Back to projects
                 </Link>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '32px' }}>
+                <div className="project-detail-header-responsive">
                     <div>
                         <h1 className="mono" style={{ marginBottom: '16px' }}>{project.name}</h1>
                         <span className={`status ${f1Status.class}`}>
@@ -59,7 +59,7 @@ function ProjectDetail() {
                         </span>
                     </div>
 
-                    <div style={{ display: 'flex', gap: '12px' }}>
+                    <div className="project-header-actions" style={{ display: 'flex', gap: '12px' }}>
                         {project.links.github && (
                             <a href={project.links.github} className="btn btn-secondary" style={{ fontSize: '14px', padding: '10px 20px' }}>
                                 <Github size={18} /> GitHub
@@ -74,13 +74,12 @@ function ProjectDetail() {
                 </div>
 
                 {/* Engineering Brief */}
-                <div style={{
+                <div className="engineering-brief-responsive" style={{
                     background: 'var(--bg-secondary)',
                     border: '1px solid var(--border-subtle)',
-                    padding: '32px',
                     marginBottom: '48px'
                 }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '32px' }}>
+                    <div className="brief-grid-responsive">
                         <div>
                             <div className="mono" style={{ fontSize: '11px', color: 'var(--text-tertiary)', marginBottom: '8px' }}>
                                 CONSTRAINT

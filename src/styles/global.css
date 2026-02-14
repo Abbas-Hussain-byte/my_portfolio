@@ -11,9 +11,10 @@
 
 :root {
   /* Base Colors (Dark Mode) */
-  --bg-primary: #0a0a0b;
-  --bg-secondary: #141416;
-  --bg-tertiary: #1c1c1f;
+  --bg-primary: #050505;
+  /* Deeper black */
+  --bg-secondary: #0f0f11;
+  --bg-tertiary: #18181b;
 
   /* Borders & Dividers */
   --border-subtle: #2a2a2e;
@@ -101,7 +102,8 @@ h6 {
 h1 {
   font-size: 48px;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  /* Tighter tracking */
 }
 
 h2 {
@@ -125,11 +127,11 @@ h3 {
 }
 
 .hero-name:hover {
-  background-image: linear-gradient(to right, #fff, var(--accent-primary), #fff) !important;
-  animation: shine 2s linear infinite;
-  text-shadow: 0 0 30px var(--accent-primary), 0 0 60px rgba(0, 217, 255, 0.5);
-  transform: scale(1.05);
-  letter-spacing: 0.02em;
+  background-image: linear-gradient(to right, #fff, #e0e0e0, #fff) !important;
+  animation: shine 4s linear infinite;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+  letter-spacing: -0.02em;
 }
 
 @keyframes shine {
@@ -192,7 +194,8 @@ a:hover {
   letter-spacing: 0.1em;
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 9999px;
+  /* Pill shape */
   /* Slight rounding for modern feel */
 }
 
@@ -214,9 +217,11 @@ a:hover {
 
 .btn-primary {
   background: var(--accent-primary);
-  color: var(--bg-primary);
+  color: #000;
+  /* Contrast text */
   border-color: var(--accent-primary);
-  box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  font-weight: 700;
 }
 
 .btn-primary:hover {
@@ -224,14 +229,16 @@ a:hover {
   box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
   background: var(--accent-primary);
   /* Keep background, don't make transparent */
-  color: var(--bg-primary);
+  /* Keep background, don't make transparent */
+  color: #000;
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-primary);
   border-color: var(--border-subtle);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
 }
 
 .btn-secondary:hover {

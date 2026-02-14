@@ -43,65 +43,131 @@ function Home() {
         <div className="container">
             <motion.section
                 className="section hero-with-grid"
-                style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginBottom: '80px' }}
+                style={{
+                    minHeight: '100vh',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginBottom: '80px',
+                    position: 'relative'
+                }}
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
             >
+                {/* Background Glow Effects */}
+                <div style={{
+                    position: 'absolute',
+                    top: '20%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '600px',
+                    height: '600px',
+                    background: 'radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, rgba(0,0,0,0) 70%)',
+                    zIndex: -1,
+                    pointerEvents: 'none'
+                }} />
 
-                {/* Floating Tech Icons Banner */}
+                {/* Avatar / Profile Placeholder */}
                 <motion.div
                     variants={itemVariants}
                     style={{
+                        width: '120px',
+                        height: '120px',
+                        borderRadius: '50%',
+                        background: 'linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary))',
+                        border: '2px solid var(--border-subtle)',
                         display: 'flex',
-                        gap: '32px',
-                        marginBottom: '40px',
-                        opacity: 0.6,
                         alignItems: 'center',
-                        justifyContent: 'center' // Centered icons
+                        justifyContent: 'center',
+                        marginBottom: '24px',
+                        position: 'relative',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.3)'
                     }}
                 >
-                    <RacingHelmet size={40} color="var(--accent-primary)" />
-                    <Terminal size={40} color="var(--accent-success)" />
-                    <Speedometer size={40} color="var(--accent-warning)" />
-                    <Laptop size={40} color="var(--accent-primary)" />
-                    <CircuitBoard size={40} color="var(--accent-highlight)" />
+                    <RacingHelmet size={60} color="var(--accent-primary)" />
+                    <div style={{
+                        position: 'absolute',
+                        bottom: '0',
+                        right: '0',
+                        width: '32px',
+                        height: '32px',
+                        background: 'var(--bg-primary)',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        border: '2px solid var(--border-subtle)'
+                    }}>
+                        <div style={{
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '50%',
+                            background: 'var(--accent-success)',
+                            boxShadow: '0 0 8px var(--accent-success)'
+                        }} />
+                    </div>
                 </motion.div>
 
+                {/* Status Badge */}
+                <motion.div
+                    variants={itemVariants}
+                    style={{
+                        marginBottom: '24px'
+                    }}
+                >
+                    <div className="status-badge" style={{
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid var(--border-subtle)',
+                        padding: '8px 16px',
+                        borderRadius: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontSize: '13px',
+                        fontWeight: 500,
+                        color: 'var(--text-secondary)'
+                    }}>
+                        <span style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            background: 'var(--accent-success)',
+                            boxShadow: '0 0 8px var(--accent-success)'
+                        }} />
+                        Available for Work
+                    </div>
+                </motion.div>
+
+                {/* Main Heading */}
                 <motion.h1
                     variants={itemVariants}
                     style={{
-                        marginBottom: '24px',
+                        marginBottom: '16px',
                         textAlign: 'center',
-                        fontSize: '56px', // Smaller as requested
-                        letterSpacing: 'normal',
-                        wordSpacing: '12px', // More distance between names
-                        background: 'linear-gradient(to right, #ffffff, #888888, #ffffff)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        textShadow: '0 0 40px rgba(255,255,255,0.1)'
+                        lineHeight: '1.1',
+                        letterSpacing: '-0.03em',
                     }}
-                    className="hero-name"
+                    className="hero-name hero-h1-responsive"
                 >
-                    ABBAS    HUSSAIN
+                    ABBAS HUSSAIN
                 </motion.h1>
 
+                {/* Subtitle / Role */}
                 <motion.p
                     variants={itemVariants}
                     style={{
                         fontSize: '20px',
                         lineHeight: '1.6',
                         color: 'var(--text-secondary)',
-                        maxWidth: '800px', // Wider to prevent 3 lines
-                        marginBottom: '16px',
-                        textAlign: 'center',
-                        marginLeft: 'auto',
-                        marginRight: 'auto'
+                        maxWidth: '800px',
+                        marginBottom: '32px',
+                        textAlign: 'center'
                     }}
+                    className="hero-text-responsive"
                 >
-                    CS student & tech enthusiast engineering <span style={{ color: 'var(--accent-primary)' }}>Full Stack</span> and <span style={{ color: 'var(--accent-primary)' }}>AI/ML</span> solutions.
-                    <br />
-                    Focused on clean code, performance, and iterative improvement.
+                    CS student & tech enthusiast engineering <span style={{ color: 'var(--accent-primary)' }}>Full Stack</span> and <span style={{ color: 'var(--accent-primary)' }}>AI/ML</span> solutions. Focused on clean code, performance, and iterative improvement.
                 </motion.p>
 
                 <motion.p
@@ -110,7 +176,7 @@ function Home() {
                         fontSize: '18px',
                         color: 'var(--text-primary)',
                         fontStyle: 'italic',
-                        marginTop: '-8px', // Pull it closer
+                        marginTop: '-16px',
                         marginBottom: '32px',
                         textAlign: 'center',
                         opacity: 0.9
@@ -119,14 +185,15 @@ function Home() {
                     "I tell machines what to do and sometimes they listen."
                 </motion.p>
 
-
+                {/* Action Buttons */}
                 <motion.div
                     variants={itemVariants}
                     style={{
                         display: 'flex',
                         gap: '16px',
                         marginBottom: '48px',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        flexWrap: 'wrap'
                     }}
                 >
                     <Link to="/projects" className="btn btn-primary">
@@ -137,27 +204,24 @@ function Home() {
                     </Link>
                 </motion.div>
 
+                {/* Tech Stack Icons (Floating below) */}
                 <motion.div
                     variants={itemVariants}
-                    className="mono"
                     style={{
-                        fontSize: '14px',
-                        color: 'var(--text-tertiary)',
-                        borderLeft: '2px solid var(--border-subtle)',
-                        paddingLeft: '16px',
-                        maxWidth: '600px',
-                        marginLeft: 'auto',
-                        marginRight: 'auto'
+                        display: 'flex',
+                        gap: '24px',
+                        opacity: 0.5,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginTop: 'auto',
+                        paddingBottom: '40px'
                     }}
+                    className="hero-icons-responsive"
                 >
-                    <div style={{ marginBottom: '8px' }}>
-                        <span style={{ color: 'var(--text-tertiary)' }}>CURRENTLY:</span>{' '}
-                        <span style={{ color: 'var(--text-secondary)' }}>Developing optimized Full-Stack & AI/ML solutions</span>
-                    </div>
-                    <div>
-                        <span style={{ color: 'var(--text-tertiary)' }}>FOCUS:</span>{' '}
-                        <span style={{ color: 'var(--text-secondary)' }}>Problem Solving, RDBMS, Backend & Advanced Git</span>
-                    </div>
+                    <Terminal size={24} color="var(--text-tertiary)" />
+                    <Laptop size={24} color="var(--text-tertiary)" />
+                    <Database size={24} color="var(--text-tertiary)" />
+                    <CircuitBoard size={24} color="var(--text-tertiary)" />
                 </motion.div>
             </motion.section>
 

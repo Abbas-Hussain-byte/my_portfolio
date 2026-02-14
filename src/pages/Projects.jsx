@@ -42,13 +42,13 @@ function Projects() {
                         <motion.h1 variants={itemVariants} style={{ marginBottom: 0 }}>Projects</motion.h1>
 
                         {/* Animated Graphics */}
-                        <motion.div variants={itemVariants} style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                        <motion.div variants={itemVariants} style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
                             <WavingFlag size={90} />
                             <TelemetryDashboard size={70} />
                         </motion.div>
 
                         {/* Static Icons */}
-                        <motion.div variants={itemVariants} style={{ display: 'flex', gap: '16px', opacity: 0.5 }}>
+                        <motion.div variants={itemVariants} style={{ display: 'flex', gap: '16px', opacity: 0.5, flexWrap: 'wrap' }}>
                             <RacingFlag size={28} color="var(--accent-success)" />
                             <Speedometer size={28} color="var(--accent-primary)" />
                             <Database size={28} color="var(--accent-warning)" />
@@ -60,7 +60,7 @@ function Projects() {
                     </motion.p>
                 </div>
 
-                <div style={{ display: 'flex', gap: '16px', marginBottom: '32px' }}>
+                <div style={{ display: 'flex', gap: '16px', marginBottom: '32px', flexWrap: 'wrap' }}>
                     <button
                         className={`btn ${activeTab === 'projects' ? 'btn-primary' : 'btn-secondary'}`}
                         onClick={() => setActiveTab('projects')}
